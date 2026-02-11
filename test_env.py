@@ -168,7 +168,7 @@ def view_database():
     return True
 
 
-def test_data_fetch(stock_code: str = "600519"):
+def test_data_fetch(stock_code: str = "600733"):
     """测试数据获取"""
     print_header("3. 数据获取测试")
     
@@ -241,7 +241,7 @@ def test_llm():
     
     # 构造测试上下文
     test_context = {
-        'code': '600519',
+        'code': '600733',
         'date': date.today().isoformat(),
         'today': {
             'open': 1420.0,
@@ -262,7 +262,7 @@ def test_llm():
     }
     
     print_section("发送测试请求")
-    print(f"  测试股票: 贵州茅台 (600519)")
+    print(f"  测试股票: 贵州茅台 (600733)")
     print(f"  正在调用 Gemini API（超时: 60秒）...")
     
     start_time = time.time()
@@ -438,7 +438,7 @@ def main():
     parser.add_argument('--fetch', action='store_true', help='测试数据获取')
     parser.add_argument('--notify', action='store_true', help='测试通知推送')
     parser.add_argument('--config', action='store_true', help='查看配置')
-    parser.add_argument('--stock', type=str, help='查询指定股票数据，如 --stock 600519')
+    parser.add_argument('--stock', type=str, help='查询指定股票数据，如 --stock 600733')
     parser.add_argument('--all', action='store_true', help='运行所有测试（包括 LLM）')
     
     args = parser.parse_args()
